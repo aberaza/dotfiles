@@ -1,0 +1,5 @@
+set my_mail = 'aritz.beraza@gmail.com'
+set my_name = 'Aritz Beraza Garayalde'
+set my_pass = 'zuezmybsgnjwfadm'
+set my_smtp_url = 'smtp://aritz.beraza@smtp.gmail.com:587/'
+

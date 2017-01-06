@@ -1,0 +1,67 @@
+# -*- mode: conf; -*-
+
+color normal        color242    color232
+color indicator     color121    color235
+color tree          color236    color234
+color status        color240    color234
+color error         color237    color232
+color message       color245    color232
+color signature     color236    color232
+color attachment    color237    color232
+color search        color121    color232
+color tilde         color252    color232
+color markers       color252    color232
+
+# mail body
+color quoted        color239    color232
+color quoted1       color237    color232
+color quoted2       color235    color232
+color quoted3       color235     color232
+color quoted4       color235     color232
+color body          color250    color234  "([a-z][a-z0-9+-]*://(((([a-z0-9_.!~*'();:&=+$,-]|%[0-9a-f][0-9a-f])*@)?((([a-z0-9]([a-z0-9-]*[a-z0-9])?)\\.)*([a-z]([a-z0-9-]*[a-z0-9])?)\\.?|[0-9]+\\.[0-9]+\\.[0-9]+\\.[0-9]+)(:[0-9]+)?)|([a-z0-9_.!~*'()$,;:@&=+-]|%[0-9a-f][0-9a-f])+)(/([a-z0-9_.!~*'():@&=+$,-]|%[0-9a-f][0-9a-f])*(;([a-z0-9_.!~*'():@&=+$,-]|%[0-9a-f][0-9a-f])*)*(/([a-z0-9_.!~*'():@&=+$,-]|%[0-9a-f][0-9a-f])*(;([a-z0-9_.!~*'():@&=+$,-]|%[0-9a-f][0-9a-f])*)*)*)?(\\?([a-z0-9_.!~*'();/?:@&=+$,-]|%[0-9a-f][0-9a-f])*)?(#([a-z0-9_.!~*'();/?:@&=+$,-]|%[0-9a-f][0-9a-f])*)?|(www|ftp)\\.(([a-z0-9]([a-z0-9-]*[a-z0-9])?)\\.)*([a-z]([a-z0-9-]*[a-z0-9])?)\\.?(:[0-9]+)?(/([-a-z0-9_.!~*'():@&=+$,]|%[0-9a-f][0-9a-f])*(;([-a-z0-9_.!~*'():@&=+$,]|%[0-9a-f][0-9a-f])*)*(/([-a-z0-9_.!~*'():@&=+$,]|%[0-9a-f][0-9a-f])*(;([-a-z0-9_.!~*'():@&=+$,]|%[0-9a-f][0-9a-f])*)*)*)?(\\?([-a-z0-9_.!~*'();/?:@&=+$,]|%[0-9a-f][0-9a-f])*)?(#([-a-z0-9_.!~*'();/?:@&=+$,]|%[0-9a-f][0-9a-f])*)?)[^].,:;!)? \t\r\n<>\"]"  # URL
+color body          color250    color234  "((@(([0-9a-z-]+\\.)*[0-9a-z-]+\\.?|#[0-9]+|\\[[0-9]?[0-9]?[0-9]\\.[0-9]?[0-9]?[0-9]\\.[0-9]?[0-9]?[0-9]\\.[0-9]?[0-9]?[0-9]\\]),)*@(([0-9a-z-]+\\.)*[0-9a-z-]+\\.?|#[0-9]+|\\[[0-9]?[0-9]?[0-9]\\.[0-9]?[0-9]?[0-9]\\.[0-9]?[0-9]?[0-9]\\.[0-9]?[0-9]?[0-9]\\]):)?[0-9a-z_.+%$-]+@(([0-9a-z-]+\\.)*[0-9a-z-]+\\.?|#[0-9]+|\\[[0-2]?[0-9]?[0-9]\\.[0-2]?[0-9]?[0-9]\\.[0-2]?[0-9]?[0-9]\\.[0-2]?[0-9]?[0-9]\\])"	# email
+color body          color33     color233  "(\\|\ .+\\|\ .+\\|$)|(\\|-+\\+.*\\|$)"	# org-tbl
+color body          color237    color232  "^(#|>+\ #)\\+(BEGIN_SRC|begin_src)\ .+"	# org src block
+color body          color237    color232  "^(#|>+\ #)\\+(END_SRC|end_src)$"		# org src block
+color body          color237    color232  "^(#|>+\ #)\\+[a-zA-Z0-9]+:.*"		# org keywords
+color body          color252    color232  "^(\\*|>+\ \\*)+\ [a-zA-Z0-9]+.*"		# org heading
+color body          color241    color234  "^>{0,}\ ?-\ (\\[\ \\]){1}"  			# org checkbox list
+color body          color252    color233  "^/{5,}$"					# R-bloggers breaks
+color body          color237    color232  "^This\ posting\ includes.*"			# R-bloggers comments
+color body          color237    color232  "^Posted:\ [0-9]{2}\ [A-Za-z]+.*"		# R-bloggers comments
+color body          color237    color232  "^\\(This\ article\ was\ first\ published.+" 	# R-bloggers comments
+color body          color237    color232  ".*R-bloggers\\)$"  	   	  		# R-bloggers comments
+color body          color234    color232  "\\[{3} [To any|whether|foreign].* \\]{3}"    # RMS idiosyncracies
+
+# index
+color index         color241    color234  ~A		# all
+color index         color244    color234  ~N		# new
+color index         color241    color234  ~O		# old
+# color index         color238    color234  ~P		# msg from me
+color index         color153    color234  "~n 6-"	# score value >= 6
+color index         color239    color234  "~n <2"	# score value < 2
+color index         color239    color234  ~R		# read
+# color index 	    color241 	color236  "~X 1-"	# one or more attachments
+# color index 	    color237 	color236  "~R~X 1-"	# one or more attachments + read
+color index         color148    color234  ~T		# tagged
+# color index         color148    color236  "~T~X 1-"	# tagged + attachment(s)
+color index         color179    color234  ~F		# flagged
+color index         color245    color235  ~v		# collapsed
+# color index         color238    color236  "~v~(!~U)"	# collapsed + with no unread
+color index         color153    color236  "~v~n 6-"	# collapsed + score value >= 6
+color index         color124     color234  ~D		# deleted
+color index         color124     color235  ~v~D		# collapsed + deleted
+color index         color179    color235  ~v~F		# collapsed + flagged
+color index         color255     color234  "^TODO\ .+"	# subject starts with TODO
+
+# mail header
+color hdrdefault    color241    color233
+# color header	    color132    color233	"^date:"
+# color header	    color23     color233	"^(to|cc|bcc):"
+color header	    color253    color233	"^from:"
+color header	    color241    color233	"^subject:"
+# color header      color241    color233	"^user-agent:"
+# color header	    color29     color233	"^reply-to:"
+
+# pgp
+color body          color239    color234        "^gpg:"
