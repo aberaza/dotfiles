@@ -1,0 +1,4 @@
+# text/html; w3m -I %{charset} -T text/html -F; copiousoutput;
+text/html; w3m -I %{charset} -T text/html -F %s; copiousoutput; 
+# autoview will use the one with copiousoutput
+text/html; w3m -I %{charset} -T text/html -F %s; needsterminal;

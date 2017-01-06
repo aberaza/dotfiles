@@ -1,0 +1,94 @@
+source "~/.mutt/my-pwds"
+
+set ssl_starttls=yes
+set ssl_force_tls=yes
+# set imap_user ='aritz.beraza@gmail.com'
+# set imap_pass = 'zuezmybsgnjwfadm'
+set imap_user = $my_mail
+set imap_pass = $my_pass
+set from= $my_mail
+set realname= $my_name
+
+# NEEDED
+set ssl_starttls = yes
+set ssl_force_tls = yes
+
+# FOLDERS
+set folder = imaps://imap.gmail.com/
+set spoolfile='+INBOX'
+set postponed = '+[Gmail]/Drafts'
+# set trash = '+[Google Mail]/Trash'
+# set some_label = '+[Google Mail]/some_label'
+## Manage Sent mails
+#set record = +Sent # GMail already does this so...
+unset record
+
+set move = no
+
+# LOCAL FOLDERS
+set header_cache = "~/.mutt/cache/headers"
+set message_cachedir = "~/.mutt/cache/bodies"
+set certificate_file = "~/.mutt/certificates"
+
+# SMTP
+# set smtp_url = 'smtp://aritz.beraza@smtp.gmail.com:587/'
+# set smtp_pass = 'zuezmybsgnjwfadm'
+
+set smtp_url = $my_smtp_url
+set smtp_pass = $my_pass
+# MAILBOXES
+set sort_browser=alpha #sort mailboxes alphabetically
+set imap_check_subscribed # Show all mailboxes registered in for the account
+
+# ALIASES
+set sort_alias=alias # Sort aliases alpha by alias name
+set alias_file=~/.mutt/aliases
+source ~/.mutt/aliases
+
+# EDITOR
+# set editor="vim -c 'set tw=70 et' '+/^$' "
+set editor="nano +7"
+set edit_headers # See headers
+
+# COLOR THEME
+# source "~/.mutt/colors/mutt-colors-solarized-dark-256.muttrc"
+# source "~/.mutt/colors/mutt-colors-solarized-light-256.muttrc"
+# source "~/.mutt/colors/moonshine.mutt"
+source "~/.mutt/colors/dark-theme.muttrc"
+
+# HEADERS
+hdr_order Date: From: To: Cc: Reply-To: Subject:
+ignore *
+unignore Date: From: To: Cc: Reply-To: X-Label: Subject:
+
+# HTML and ATTACHMENTS
+set mailcap_path = ~/.mutt/mailcap
+auto_view text/html
+alternative_order text/plain text/html
+
+# EXTRA CONFIG
+set imap_keepalive = 900
+set markers #wrap lines of text with a +
+set smart_wrap
+set pager_context=3
+set status_on_top # status bar on top
+push <show-version> # show mutt version at startup
+set include # include message in reply
+set sort=threads
+set sort_aux=reverse-last-date-received
+# set sort_aux=date-received
+set nobeep
+
+
+# MACROS
+macro index,pager gi '<change-folder>=INBOX<enter>' 'Go to inbox'
+macro index,pager ga '<change-folder>=[Gmail]/All Mail<enter>' 'Go to all mail'
+macro index,pager gs '<change-folder>=[Gmail]/Starred<enter>' 'Go to starred messages'
+macro index,pager gd '<change-folder>=[Gmail]/Drafts<enter>' 'Go to drafts'
+## pager Navigation
+bind pager,index gg first-entry
+bind pager,index G last-entry
+bind index,pager R group-reply
+
+## labels
+#
