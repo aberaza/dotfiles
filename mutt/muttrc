@@ -2,8 +2,7 @@ source "~/.mutt/my-pwds"
 
 set ssl_starttls=yes
 set ssl_force_tls=yes
-# set imap_user ='aritz.beraza@gmail.com'
-# set imap_pass = 'zuezmybsgnjwfadm'
+
 set imap_user = $my_mail
 set imap_pass = $my_pass
 set from= $my_mail
