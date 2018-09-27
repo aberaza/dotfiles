@@ -1,7 +1,4 @@
-source "~/.mutt/my-pwds"
-
-set ssl_starttls=yes
-set ssl_force_tls=yes
+source "~/.mutt/credentials"
 
 set imap_user = $my_mail
 set imap_pass = $my_pass
@@ -28,6 +25,8 @@ set move = no
 set header_cache = "~/.mutt/cache/headers"
 set message_cachedir = "~/.mutt/cache/bodies"
 set certificate_file = "~/.mutt/certificates"
+set message_cache_clean=yes
+
 
 # SMTP
 # set smtp_url = 'smtp://aritz.beraza@smtp.gmail.com:587/'
@@ -39,6 +38,8 @@ set smtp_pass = $my_pass
 set sort_browser=alpha #sort mailboxes alphabetically
 set imap_check_subscribed # Show all mailboxes registered in for the account
 
+# Increase polling interval to reduce network congestion
+set mail_check=180
 # ALIASES
 set sort_alias=alias # Sort aliases alpha by alias name
 set alias_file=~/.mutt/aliases
@@ -53,7 +54,9 @@ set edit_headers # See headers
 # source "~/.mutt/colors/mutt-colors-solarized-dark-256.muttrc"
 # source "~/.mutt/colors/mutt-colors-solarized-light-256.muttrc"
 # source "~/.mutt/colors/moonshine.mutt"
-source "~/.mutt/colors/dark-theme.muttrc"
+# source "~/.mutt/colors/dark-theme.muttrc"
+source "~/.mutt/colors/dracula.muttrc"
+
 
 # HEADERS
 hdr_order Date: From: To: Cc: Reply-To: Subject:
@@ -85,9 +88,10 @@ macro index,pager ga '<change-folder>=[Gmail]/All Mail<enter>' 'Go to all mail'
 macro index,pager gs '<change-folder>=[Gmail]/Starred<enter>' 'Go to starred messages'
 macro index,pager gd '<change-folder>=[Gmail]/Drafts<enter>' 'Go to drafts'
 ## pager Navigation
-bind pager,index gg first-entry
-bind pager,index G last-entry
+bind attach,browser,index gg  first-entry
+bind attach,browser,index G   last-entry
+bind pager                gg  top
+bind pager                G   bottom
 bind index,pager R group-reply
-
 ## labels
 #
