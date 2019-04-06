@@ -1,3 +1,5 @@
 [user]
 	email = aritz.beraza@gmail.com
 	name = Aritz Beraza
+[core]
+	editor = vim
