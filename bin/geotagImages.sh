@@ -2,7 +2,7 @@
 CMD="exiftool"
 NOOVERWRITE="-if 'not \$gps:all'"
 PHOTO_DIR="."
-GPSLOG_DIR="/home/aritz/locationLogs"
+GPSLOG_DIR="/home/aritz/GPSLog"
 
 AUTHOR='Aritz Beraza'
 RIGHTS="© \$CreateDate, $AUTHOR"
